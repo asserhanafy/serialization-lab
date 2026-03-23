@@ -1,0 +1,33 @@
+{
+  "type": "record",
+  "name": "Menu",
+  "namespace": "com.serialization.lab.avro",
+  "fields": [
+    {
+      "name": "header",
+      "type": "string"
+    },
+    {
+      "name": "items",
+      "type": {
+        "type": "array",
+        "items": [
+          "null",
+          {
+            "type": "record",
+            "name": "MenuItem",
+            "fields": [
+              {"name": "id", "type": "string"},
+              {
+                "name": "label",
+                "type": ["null", "string"],
+                "default": null
+              }
+            ]
+          }
+        ],
+        "default": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+option java_package = "com.serialization.lab.proto";
+option java_outer_classname = "MenuProto";
+
+message MenuItem {
+  string id = 1;
+  string label = 2;
+}
+
+message ItemOrNull {
+  bool has_value = 1;
+  MenuItem item = 2;
+}
+
+message Menu {
+  string header = 1;
+  repeated ItemOrNull items = 2;
+}
